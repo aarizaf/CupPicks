@@ -1,0 +1,37 @@
+# Dependencias
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Cache de Vite y TypeScript
+.vite/
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Variables de entorno (pueden contener secretos)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
