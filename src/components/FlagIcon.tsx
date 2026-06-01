@@ -1,7 +1,7 @@
 import * as Flags from 'country-flag-icons/react/3x2';
-import type { SVGProps } from 'react';
+import type { SVGProps, ReactElement } from 'react';
 
-type FlagComponent = (props: SVGProps<SVGSVGElement>) => JSX.Element;
+type FlagComponent = (props: SVGProps<SVGSVGElement>) => ReactElement;
 type FlagsMap = Record<string, FlagComponent>;
 
 /**

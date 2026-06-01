@@ -11,17 +11,12 @@ import { LoginPage }           from './components/LoginPage';
 import { matches, upcomingMatches } from './data/matches';
 import { groups }  from './data/groups';
 
-const SESSION_KEY = 'cuppicks-session';
-
 function App() {
-  const [user, setUser] = useState<string | null>(
-    () => sessionStorage.getItem(SESSION_KEY)
-  );
+  const [user, setUser] = useState<string | null>(null);
 
   const liveCount = matches.filter((m) => m.status === 'live').length;
 
   function handleLogin(username: string) {
-    sessionStorage.setItem(SESSION_KEY, username);
     setUser(username);
   }
 
@@ -29,9 +24,13 @@ function App() {
     return <LoginPage onLogin={handleLogin} />;
   }
 
+  function handleLogout() {
+    setUser(null);
+  }
+
   return (
     <div className="layout">
-      <Sidebar />
+      <Sidebar onLogout={handleLogout} />
 
       <div className="main">
         <Topbar />
